@@ -9,6 +9,14 @@
 
 import UIKit
 
+protocol PersonViewDelegate: class{
+    func addButtonPress(text : String)
+}
+
+protocol StackViewDelegate: class{
+    func deleteButtonPress(view: StackElementView)
+}
+
 class ViewController: UIViewController, PersonViewDelegate , StackViewDelegate {
     
     //MARK:- IBOutlets
@@ -75,9 +83,11 @@ extension UIView {
     func height(constant: CGFloat) {
         setConstraint(value: constant, attribute: .height)
     }
+    
     func width(constant: CGFloat) {
         setConstraint(value: constant, attribute: .width)
     }
+    
     private func removeConstraint(attribute: NSLayoutConstraint.Attribute) {
         constraints.forEach {
             if $0.firstAttribute == attribute {
@@ -85,6 +95,7 @@ extension UIView {
             }
         }
     }
+    
     private func setConstraint(value: CGFloat, attribute: NSLayoutConstraint.Attribute) {
         removeConstraint(attribute: attribute)
         let constraint =

@@ -10,9 +10,6 @@ import UIKit
 
 //MARK:- Delegate protocol
 
-protocol PersonViewDelegate: class{
-    func addButtonPress(text : String)
-}
 
 class PersonView: UIView {
     
