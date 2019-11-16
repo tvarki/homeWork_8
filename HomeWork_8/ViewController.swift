@@ -38,14 +38,12 @@ class ViewController: UIViewController, PersonViewDelegate , StackViewDelegate {
             }}
     }
     
-    
     //MARK:- Overrided functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         personView.delegate = self
         setStackViewHeight(count: 0)
-        
         
         //        let tmp = PersonView()
         //        tmp.delegate = self
@@ -58,10 +56,7 @@ class ViewController: UIViewController, PersonViewDelegate , StackViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    
-    
     //MARK:- Support functions
-    
     
     func makeAlert(title: String , text: String){
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
@@ -75,7 +70,6 @@ class ViewController: UIViewController, PersonViewDelegate , StackViewDelegate {
 }
 
 //MARK:- UIView extension
-
 
 extension UIView {
     func height(constant: CGFloat) {
@@ -104,7 +98,6 @@ extension UIView {
         self.addConstraint(constraint)
     }
     
-    
     func fixInView(_ container: UIView!) -> Void{
         self.translatesAutoresizingMaskIntoConstraints = false;
         self.frame = container.frame;
@@ -114,8 +107,6 @@ extension UIView {
         NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: container, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: container, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
-        
-        
     }
     
 }

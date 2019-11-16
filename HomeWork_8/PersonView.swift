@@ -22,7 +22,6 @@ class PersonView: UIView {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var stringTextField: UITextField!
     
-    
 //MARK:- variables
 
     weak var delegate : PersonViewDelegate?
@@ -45,7 +44,6 @@ class PersonView: UIView {
         contentView.fixInView(self)
     }
     
-    
 //MARK:- IBActions
 
     @IBAction func addButtonClicked(_ sender: UIButton) {
@@ -54,7 +52,6 @@ class PersonView: UIView {
 
         delegate?.addButtonPress(text: (stringTextField.text)!)
     }
-    
     
 }
 
