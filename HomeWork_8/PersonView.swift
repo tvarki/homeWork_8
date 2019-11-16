@@ -8,23 +8,28 @@
 
 import UIKit
 
+//MARK:- Delegate protocol
+
+protocol PersonViewDelegate: class{
+    func addButtonPress(text : String)
+}
+
 class PersonView: UIView {
     
+//MARK:- class IBOutlets
+
     @IBOutlet var contentView: UIView!
-    
-    
-    weak var delegate : PersonViewDelegate?
-    
     @IBOutlet weak var addButton: UIButton!
-    
     @IBOutlet weak var stringTextField: UITextField!
     
     
-    
-    
+//MARK:- variables
+
+    weak var delegate : PersonViewDelegate?
     let kCONTENT_XIB_NAME = "PersonView"
     
-    
+//MARK:- All for class init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -41,6 +46,8 @@ class PersonView: UIView {
     }
     
     
+//MARK:- IBActions
+
     @IBAction func addButtonClicked(_ sender: UIButton) {
         guard stringTextField.text != nil else {return}
         guard stringTextField.text != "" else {return}
@@ -51,6 +58,3 @@ class PersonView: UIView {
     
 }
 
-protocol PersonViewDelegate: class{
-    func addButtonPress(text : String)
-}

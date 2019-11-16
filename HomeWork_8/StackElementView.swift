@@ -8,19 +8,25 @@
 
 import UIKit
 
+protocol StackViewDelegate: class{
+    func deleteButtonPress(view: StackElementView)
+}
+
 class StackElementView: UIView {
     
-    
+//MARK:- class IBOutlets
+
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var stringLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     
-    weak var delegate : StackViewDelegate?
+//MARK:- variables
 
-    
+    weak var delegate : StackViewDelegate?
     let kCONTENT_XIB_NAME = "StackElementView"
     
-    
+//MARK:- All for class init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -38,7 +44,8 @@ class StackElementView: UIView {
         contentView.fixInView(self)
     
     }
-    
+    //MARK:- IBActions
+
     @IBAction func deleteButtonClicked(_ sender: UIButton) {
         delegate?.deleteButtonPress(view: self)
 
@@ -48,14 +55,4 @@ class StackElementView: UIView {
 }
 
 
-protocol StackViewDelegate: class{
-    func deleteButtonPress(view: StackElementView)
-}
 
-
-extension UIView{
-    func fixDelteInView(_ container: UIView!) -> Void{
-              self.frame = container.frame;
-              container.addSubview(self);
-       }
-}
