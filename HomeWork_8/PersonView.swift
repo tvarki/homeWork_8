@@ -8,8 +8,10 @@
 
 import UIKit
 
-//MARK:- Delegate protocol
-
+//MARK:- PersonViewDelegate protocol
+protocol PersonViewDelegate: class{
+    func addButtonPress(text : String)
+}
 
 class PersonView: UIView {
     

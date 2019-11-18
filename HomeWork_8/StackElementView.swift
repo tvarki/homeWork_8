@@ -8,6 +8,11 @@
 
 import UIKit
 
+//MARK:- StackViewDelegate protocol
+protocol StackViewDelegate: class{
+    func deleteButtonPress(view: StackElementView)
+}
+
 class StackElementView: UIView {
     
 //MARK:- class IBOutlets

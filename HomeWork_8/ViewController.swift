@@ -9,13 +9,9 @@
 
 import UIKit
 
-protocol PersonViewDelegate: class{
-    func addButtonPress(text : String)
-}
 
-protocol StackViewDelegate: class{
-    func deleteButtonPress(view: StackElementView)
-}
+
+
 
 class ViewController: UIViewController, PersonViewDelegate , StackViewDelegate {
     
